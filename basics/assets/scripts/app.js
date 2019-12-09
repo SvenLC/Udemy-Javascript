@@ -9,6 +9,5 @@ function add(num1, num2) {
 currentResult = add(1, 2);
 
 let calculationDescription = `(${defaultResult} 0 + 10) * 3 / 2 -1`;
-let errorMessage = 'An error \n' + 'occured';
 
 outputResult(currentResult, calculationDescription);

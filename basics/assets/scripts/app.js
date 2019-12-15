@@ -43,7 +43,7 @@ function calculResult(calculationType) {
     calculationType === 'ADD' ||
     calculationType === 'SUBTRACT' ||
     calculationType === 'MULTIPLY' ||
-    (calculationType === 'DIVIDE' && enteredNumber != 0)
+    (calculationType === 'DIVIDE' && !enteredNumber)
   ) {
     const enteredNumber = getUserNumberInput();
     const initialResult = currentResult;

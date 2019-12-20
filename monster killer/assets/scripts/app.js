@@ -212,8 +212,14 @@ function printLogHandler() {
     console.log('-------------');
   }
   let j = 3;
-  do {
-    console.log('--------------');
+  outerWhile: do {
+    console.log('Outer', j);
+    innerFor: for (let k = 0; k < 5; k++) {
+      console.log('Inner', k);
+      if (k === 3) {
+        break outerWhile;
+      }
+    }
     j++;
   } while (j < 3);
   // for (let i = 10; i > 0; i--) {

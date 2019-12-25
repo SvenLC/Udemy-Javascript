@@ -29,61 +29,28 @@ function writeToLog(
   console.log(logEntry.operation);
 }
 
-function calculResult(calculationType) {
-  // if (
-  //   calculationType !== 'ADD' &&
-  //   calculationType !== 'SUBTRACT' &&
-  //   calculationType !== 'MULTIPLY' &&
-  //   calculationType !== 'DIVIDE'
-  // ) {
-  //   return;
-  // }
-
-  if (
-    calculationType === 'ADD' ||
-    calculationType === 'SUBTRACT' ||
-    calculationType === 'MULTIPLY' ||
-    (calculationType === 'DIVIDE' && !enteredNumber)
-  ) {
-    const enteredNumber = getUserNumberInput();
-    const initialResult = currentResult;
-    let mathOperator;
-    if (calculationType === 'ADD') {
-      currentResult += enteredNumber;
-      mathOperator = '+';
-    } else if (calculationType === 'SUBTRACT') {
-      currentResult -= enteredNumber;
-      mathOperator = '-';
-    } else if (calculationType === 'MULTIPLY') {
-      currentResult *= enteredNumber;
-      mathOperator = '*';
-    } else if (calculationType === 'DIVIDE') {
-      currentResult /= enteredNumber;
-      mathOperator = '/';
-    }
-
-    createAndWriteOutput(mathOperator, initialResult, enteredNumber);
-    writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+function calculation(operation) {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  let operator;
+  if (operation === 'ADD') {
+    currentResult += enteredNumber;
+    operator = '+';
+  } else if (operation === 'SUBTRACT') {
+    currentResult -= enteredNumber;
+    operator = '-';
+  } else if (operation === 'MULTIPLY') {
+    currentResult *= enteredNumber;
+    operator = '*';
+  } else {
+    currentResult /= enteredNumber;
+    operator = '/';
   }
+  createAndWriteOutput(operator, initialResult, enteredNumber);
+  writeToLog(operation, initialResult, enteredNumber, currentResult);
 }
 
-function add() {
-  calculResult('ADD');
-}
-
-function subtract() {
-  calculResult('SUBTRACT');
-}
-
-function multiply() {
-  calculResult('MULTIPLY');
-}
-
-function divide() {
-  calculResult('DIVIDE');
-}
-
-addBtn.addEventListener('click', add);
-subtractBtn.addEventListener('click', subtract);
-multiplyBtn.addEventListener('click', multiply);
-divideBtn.addEventListener('click', divide);
+addBtn.addEventListener('click', calculate.bind(this, 'ADD'));
+subtractBtn.addEventListener('click', calculate.bind(this, 'ADD'));
+multiplyBtn.addEventListener('click', calculate.bind(this, 'ADD'));
+divideBtn.addEventListener('click', calculate.bind(this, 'ADD'));

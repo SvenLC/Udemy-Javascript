@@ -47,10 +47,14 @@
 // const removedElements = hobbies.splice(-2, 1);
 // console.log(hobbies);
 
-const testResults = [1, 5.3, 1.5, 10.99, -5, 10];
+const testResults = [1, 5.3, 1.5, 10.99, 1.5, -5, 10];
 // const storedResulsts = testResults.slice(2);
 const storedResulsts = testResults.concat([3.99, 2]);
 
 testResults.push(5.91);
 
 console.log(storedResults, testResults);
+console.log(testResults.indexOf(1.5));
+
+const personnalData = [{ name: 'Max' }, { name: 'Manuel' }];
+console.log(personnalData.indexOf({ name: 'Manuel' }));

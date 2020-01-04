@@ -56,5 +56,19 @@ testResults.push(5.91);
 console.log(storedResults, testResults);
 console.log(testResults.indexOf(1.5));
 
-const personnalData = [{ name: 'Max' }, { name: 'Manuel' }];
-console.log(personnalData.indexOf({ name: 'Manuel' }));
+const personData = [{ name: 'Max' }, { name: 'Manuel' }];
+console.log(personData.indexOf({ name: 'Manuel' }));
+
+const manuel = personnData.find((person, index, persons) => {
+  return person.name === 'Manuel';
+});
+
+manuel.name = 'Anna';
+
+console.log(manuel);
+
+const maxIndex = personData.findIndex((person, index, persons) => {
+  return person.name === 'Max';
+});
+
+console.log(maxIndex);

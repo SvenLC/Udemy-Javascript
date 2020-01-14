@@ -21,8 +21,9 @@ const renderMovies = (filter = '') => {
     const movieEl = document.createElement('li');
     const { info, ...otherProps } = movie;
     // const { title: movieTitle } = info;
-    // const { getFormattedTittle } = movie;
-    let text = movie.getFormattedTittle() + ' - ';
+    const { getFormattedTittle } = movie;
+    getFormattedTittle = getFormattedTittle.bind(movie)
+    let text = getFormattedTittle() + ' - ';
     for (const key in info) {
       if (key !== 'title') {
         text = text + `${key}: ${info[key]}`;

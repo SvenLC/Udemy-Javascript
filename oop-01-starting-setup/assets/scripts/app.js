@@ -3,11 +3,29 @@ class Product {
   imageUrl;
   description;
   price;
+
+  constructor(title, image, desc, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = desc;
+    this.price = price;
+  }
 }
 
 const productList = {
   products: [
-    new Product(),
+    new Product(
+      'A Pillow',
+      'https://www.serta.com/sites/ssb/serta.com/uploads/2018/accessories/pillows/Cool%20Comfy%20Queen/CoolComfy1.jpg',
+      'A soft pillow!',
+      19.99
+    ),
+    new Product(
+      'A Carpet',
+      'https://www.cdiscount.com/pdt2/9/0/0/1/550x550/sto7042421098900/rw/tapis-peluche-chambre-salon-carpet-moquette-d-enfa.jpg',
+      'A carpet which you might like - or not.',
+      89.99
+    ),
     {
       title: 'A Pillow',
       imageUrl:

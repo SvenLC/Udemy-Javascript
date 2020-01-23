@@ -4,13 +4,20 @@ class AgedPerson {
   }
 }
 
-class Person extends AgedPerson {
+class Person {
   name = 'Max';
 
   constructor() {
-    super();
+    // super();
     this.age = 30;
+    // this.greet = function() { ... };
   }
+
+  // greet = () => {
+  //   console.log(
+  //     'Hi, I am ' + this.name + ' and I am ' + this.age + ' years old.'
+  //   );
+  // };
 
   greet() {
     console.log(
@@ -22,12 +29,14 @@ class Person extends AgedPerson {
 // function Person() {
 //   this.age = 30;
 //   this.name = 'Max';
-//   this.greet = function() {
-//     console.log(
-//       'Hi, I am ' + this.name + ' and I am ' + this.age + ' years old.'
-//     );
-//   };
+//   // this.greet = function() { ... };
 // }
+
+// Person.prototype.greet = function() {
+//   console.log(
+//     'Hi, I am ' + this.name + ' and I am ' + this.age + ' years old.'
+//   );
+// };
 
 // Person.describe = function() {
 //   console.log('Creating persons...');
@@ -54,4 +63,9 @@ class Person extends AgedPerson {
 // console.dir(Object.prototype.__proto__);
 
 const p = new Person();
-console.log(p);
+const p2 = new Person();
+p.greet();
+console.log(p.__proto__ === p2.__proto__);
+
+const button = document.getElementById('btn');
+button.addEventListener('click', p.greet.bind(p));

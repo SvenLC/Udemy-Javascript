@@ -1,7 +1,17 @@
-class Tooltip {
+class Tooltip {}
 
+class ProjectItem {}
+
+class ProjectList {
+  constructor(type) {
+    const prjItems = document.querySelectorAll(`#${type}-projects li`);
+    console.log(prjItems);
+  }
 }
 
-class ProjectItem {
-    
+class App {
+  static init() {
+    const activeProjectList = new ProjectItem('active');
+    const finishedProjectList = new ProjectList('finished');
+  }
 }

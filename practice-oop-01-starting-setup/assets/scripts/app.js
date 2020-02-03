@@ -64,14 +64,12 @@ class Tooltip extends Component {
     const x = hostElPosLeft + 20;
     const y = hostElPosTop + hostElHeight - parentElementScrolling - 10;
 
-    tooltipElement.style.position = 'absolute'
+    tooltipElement.style.position = 'absolute';
     tooltipElement.style.left = x + 'px';
     tooltipElement.style.top = x + 'px';
 
-
     tooltipElement.addEventListener('click', this.closeTooltip);
     this.element = tooltipElement;
-
   }
 }
 
@@ -91,9 +89,13 @@ class ProjectItem {
     }
     const projectElement = document.getElementById(this.id);
     const tooltipText = projectElement.dataset.extraInfo;
-    const tooltip = new Tooltip(() => {
-      this.hasActiveTooltip = false;
-    }, tooltipText, this.id);
+    const tooltip = new Tooltip(
+      () => {
+        this.hasActiveTooltip = false;
+      },
+      tooltipText,
+      this.id
+    );
     tooltip.attach();
     this.hasActiveTooltip = true;
   }
@@ -164,6 +166,16 @@ class App {
     finishedProjectList.setSwitchHandlerFunction(
       activeProjectList.addProject.bind(activeProjectList)
     );
+
+    document
+      .getElementById('start-analytics-btn')
+      .addEventListener('click', this.startAnalytics);
+  }
+  static startAnalytics() {
+    const analyticsScript = document.createElement('script');
+    analyticsScript.src = 'assets/scripts/analytics.js';
+    analyticsScript.defer = true;
+    document.head.append(analyticsScript);
   }
 }
 

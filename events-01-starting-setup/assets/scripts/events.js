@@ -2,16 +2,21 @@ const button = document.querySelector('button');
 
 // button.onclick = function() {};
 
-// const buttonClickHandler = () => {
-//   alert('Button was clicked!');
-// };
+const buttonClickHandler = () => {
+  alert('Button was clicked!');
+};
 
-// const anotherButtonClickHandler = () => {
-//   console.log('This was clicked!');
-// };
+const anotherButtonClickHandler = () => {
+  console.log('This was clicked!');
+};
 
 // button.onclick = buttonClickHandler;
 // button.onclick = anotherButtonClickHandler;
 
-button.addEventListener();
-button.removeEventListener();
+const bondFn = buttonClickHandler.bind(this);
+
+button.addEventListener('click', bondFn);
+
+setTimeout(() => {
+  button.removeEventListener('click', bondFn);
+}, 2000);

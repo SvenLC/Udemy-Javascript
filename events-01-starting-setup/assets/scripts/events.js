@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll('button');
 // button.onclick = function() {};
 
 const buttonClickHandler = event => {
-  event.target.disable = true;
+  //   event.target.disable = true;
   console.log(event);
 };
 
@@ -18,8 +18,12 @@ const bondFn = buttonClickHandler.bind(this);
 
 // button.addEventListener('click', bondFn);
 
-buttons.forEach(btn => btn.addEventListener('click', buttonClickHandler));
+buttons.forEach(btn => btn.addEventListener('mouseenter', buttonClickHandler));
 
 // setTimeout(() => {
 //   button.removeEventListener('click', bondFn);
 // }, 2000);
+
+window.addEventListener('scroll', event => {
+  console.log(event);
+});

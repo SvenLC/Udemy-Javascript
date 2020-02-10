@@ -18,12 +18,19 @@ const bondFn = buttonClickHandler.bind(this);
 
 // button.addEventListener('click', bondFn);
 
-buttons.forEach(btn => btn.addEventListener('mouseenter', buttonClickHandler));
+// buttons.forEach(btn => btn.addEventListener('mouseenter', buttonClickHandler));
 
 // setTimeout(() => {
 //   button.removeEventListener('click', bondFn);
 // }, 2000);
 
-window.addEventListener('scroll', event => {
+// window.addEventListener('scroll', event => {
+//   console.log(event);
+// });
+
+const form = document.querySelector('form');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
   console.log(event);
 });

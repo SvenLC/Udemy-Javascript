@@ -48,3 +48,18 @@ button.addEventListener('mouseenter', event => {
   console.log('CLICKED BUTTON');
   console.log(event);
 });
+
+const listItems = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+
+// listItems.forEach(listItem => {
+//   listItem.addEventListener('click', event => {
+//     event.target.classList.toggle('highlight');
+//   });
+// });
+
+list.addEventListener('click', event => {
+  // console.log(event.currentTarget);
+  // event.target.classList.toggle('highlight');
+  event.target.closet('li').classList.toggle('highlight');
+});

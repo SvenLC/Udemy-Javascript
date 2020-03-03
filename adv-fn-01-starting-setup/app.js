@@ -50,3 +50,16 @@ multiplier = 1.2;
 
 console.log(calculateVatAmout(100));
 console.log(calculateVatAmout(200));
+
+let userName = 'Sven';
+
+function greetUser() {
+//   let name = 'Anna';
+  console.log('Hi' + name);
+}
+
+let name = 'Maximilian';
+
+userName = 'Manuel';
+
+greetUser();

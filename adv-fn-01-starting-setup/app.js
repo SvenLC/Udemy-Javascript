@@ -31,3 +31,17 @@ function printHobbies(h) {
 }
 
 printHobbies(hobbies);
+
+function createTaxCalculator(tax) {
+  function calculateTax(amout) {
+    return amout * tax;
+  }
+
+  return calculateTax;
+}
+
+const calculateVatAmout = createTaxCalculator(0.19);
+const incomeTaxAmout = createTaxCalculator(0.25);
+
+console.log(calculateVatAmout(100));
+console.log(calculateVatAmout(200));
